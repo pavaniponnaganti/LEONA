@@ -1,0 +1,345 @@
+package com.leona.home;
+
+
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.leona.R;
+import com.leona.handlers.HomeAdapter;
+import com.leona.handlers.HomeViewpagerAdapter;
+import com.leona.models.HomeModel;
+import com.leona.restservices.AsyncHttpResponse;
+import com.leona.restservices.RestApis;
+import com.leona.restservices.RestMethods;
+import com.leona.utils.AppMethods;
+import com.leona.utils.AppStrings;
+import com.leona.utils.Appintegers;
+import com.leona.utils.EndlessParentScrollListener;
+import com.leona.utils.SessionManager;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+
+public class PreferencesFragment extends Fragment implements AsyncHttpResponse.AsyncHttpResponseListener {
+    private static final String TAG = "HomeFragment";
+    SessionManager sm;
+    RecyclerView home_rv;
+    ArrayList<HomeModel> addList ,discountList;
+    HomeAdapter adapter;
+    LinearLayoutManager manager;
+    //    SwipeRefreshLayout home_srl;
+    ViewPager home_vpager;
+    HomeViewpagerAdapter homeViewpagerAdapter;
+
+    int min_f = 0, max_f = Appintegers.Count;
+    int min = 0, max = Appintegers.Count;
+
+    int totalCount = 0;
+
+    NestedScrollView frag_home_nsv;
+
+    private int page = 0;
+    private Handler handler;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        intiUI(view);
+        advertismentApi(min,max,true);
+        discountApi(min,max,true);
+        return view;
+    }
+
+    Runnable runnable = new Runnable() {
+        public void run() {
+            if (homeViewpagerAdapter.getCount() == page) {
+                page = 0;
+            } else {
+                page++;
+            }
+            home_vpager.setCurrentItem(page, true);
+            handler.postDelayed(this, Appintegers.Delay);
+        }
+    };
+
+
+    public void intiUI(View view) {
+
+        handler = new Handler();
+        sm = new SessionManager(getActivity());
+        home_vpager = (ViewPager) view.findViewById(R.id.home_vpager);
+        home_rv = (RecyclerView) view.findViewById(R.id.home_rv);
+//        home_srl = (SwipeRefreshLayout) view.findViewById(R.id.home_srl);
+//        home_srl.setOnRefreshListener(HomeFragment.this);
+        addList = new ArrayList<>();
+        discountList = new ArrayList<>();
+        adapter = new HomeAdapter(discountList, getActivity());
+        manager = new LinearLayoutManager(getActivity());
+        manager = AppMethods.getLinearLayoutWithOutScroll(getActivity());
+        home_rv.setAdapter(adapter);
+        home_rv.setLayoutManager(manager);
+
+        homeViewpagerAdapter = new HomeViewpagerAdapter(addList ,getActivity());
+        home_vpager.setOffscreenPageLimit(homeViewpagerAdapter.getCount());
+        home_vpager.setAdapter(homeViewpagerAdapter);
+
+
+        frag_home_nsv = (NestedScrollView) view.findViewById(R.id.frag_home_nsv);
+        frag_home_nsv.setOnScrollChangeListener(new EndlessParentScrollListener(manager) {
+            @Override
+            public void onLoadMore(int page, int totalItemsCount) {
+                if (totalItemsCount < totalCount) {
+                    min = min + Appintegers.Count;
+                    discountApi(min, max, false);
+                }
+            }
+        });
+
+//        home_srl.post(new Runnable() {
+//            @Override
+//            public void run() {
+//                onRefresh();
+//                home_srl.setRefreshing(true);
+//
+//            }
+//        });
+    }
+
+
+    public void discountApi(int min ,int max, boolean status) {
+        if (!AppMethods.isConnectingToInternet(getActivity())) {
+            AppMethods.alertForNoInternet(getActivity());
+        } else {
+            RequestParams params = RestMethods.PrefernceDiscountApi(sm.getStringData(AppStrings.Responsedata.userID),
+                    min, max,sm.getIntData(AppStrings.RequestedData.type));
+            AsyncHttpResponse asyncHttpResponse = new AsyncHttpResponse(this, false);
+            asyncHttpResponse.postAsyncHttp(RestApis.preferencesDiscounts, params,
+                    sm.getStringData(AppStrings.Responsedata.token),status);
+
+        }
+    }
+
+    public void advertismentApi(int min ,int max, boolean status) {
+        if (!AppMethods.isConnectingToInternet(getActivity())) {
+            AppMethods.alertForNoInternet(getActivity());
+        } else {
+            RequestParams params = RestMethods.allAdvertisementsparams(sm.getStringData(AppStrings.Responsedata.userID),
+                    min, max,Appintegers.featureType.preference,sm.getIntData(AppStrings.RequestedData.type));
+            AsyncHttpResponse asyncHttpResponse = new AsyncHttpResponse(this, false);
+            asyncHttpResponse.postAsyncHttp(RestApis.allAdvertisements, params,
+                    sm.getStringData(AppStrings.Responsedata.token),status);
+
+        }
+    }
+
+    @Override
+    public void onAsyncHttpResponseGet(String response, String URL ,boolean status) throws JSONException {
+        if (URL.equals(RestApis.preferencesDiscounts)) {
+            discountApiJson(response ,status);
+        } else if (URL.equals(RestApis.allAdvertisements)) {
+            adverstismentApiJson(response);
+        }
+    }
+
+    public void apidiscountJsonData(String imageBaseUrl, String arrayData) {
+        try {
+            JSONArray jsonArray = new JSONArray(arrayData);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject job = jsonArray.getJSONObject(i);
+                String discountID = job.optString(AppStrings.Responsedata.discountID);
+                String image = job.optString(AppStrings.Responsedata.image);
+                String discountName = job.optString(AppStrings.Responsedata.discountName);
+                String originalPrice = job.optString(AppStrings.Responsedata.originalPrice);
+                String discountPrice = job.optString(AppStrings.Responsedata.discountPrice);
+                String startTimeDate = job.optString(AppStrings.Responsedata.startTimeDate);
+                String endTimeDate = job.optString(AppStrings.Responsedata.endTimeDate);
+                String description = job.getString(AppStrings.Responsedata.description);
+                String featured = job.optString(AppStrings.Responsedata.featured);
+                String timeDateStamp = job.optString(AppStrings.Responsedata.timeDateStamp);
+                String merchantID = job.optString(AppStrings.Responsedata.merchantID);
+                String storeName = job.optString(AppStrings.Responsedata.storeName);
+
+                HomeModel model = new HomeModel();
+                model.setDiscountID(discountID);
+                model.setImage(imageBaseUrl + image);
+                model.setDiscountName(discountName);
+                model.setDiscountPrice(discountPrice);
+                model.setOriginalPrice(originalPrice);
+                model.setStartTimeDate(startTimeDate);
+                model.setEndTimeDate(endTimeDate);
+                model.setDescription(description);
+                model.setFeatured(featured);
+                model.setTimeDateStamp(timeDateStamp);
+                model.setStoreName(storeName);
+                model.setMerchantID(merchantID);
+                discountList.add(model);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+ public void apiaddJsonData(String imageBaseUrl, String arrayData) {
+        try {
+            JSONArray jsonArray = new JSONArray(arrayData);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject job = jsonArray.getJSONObject(i);
+                String adID = job.optString(AppStrings.Responsedata.adID);
+                String image = job.optString(AppStrings.Responsedata.adimage);
+                String discountName = job.optString(AppStrings.Responsedata.discountName);
+                String originalPrice = job.optString(AppStrings.Responsedata.originalPrice);
+                String discountPrice = job.optString(AppStrings.Responsedata.discountPrice);
+                String startTimeDate = job.optString(AppStrings.Responsedata.startTimeDate);
+                String endTimeDate = job.optString(AppStrings.Responsedata.endTimeDate);
+                String description = job.getString(AppStrings.Responsedata.description);
+                String featured = job.optString(AppStrings.Responsedata.featured);
+                String timeDateStamp = job.optString(AppStrings.Responsedata.timeDateStamp);
+                String merchantID = job.optString(AppStrings.Responsedata.merchantID);
+                String storeName = job.optString(AppStrings.Responsedata.storeName);
+
+                HomeModel model = new HomeModel();
+                model.setAdID(adID);
+                model.setImage(imageBaseUrl + image);
+                model.setDiscountName(discountName);
+                model.setDiscountPrice(discountPrice);
+                model.setOriginalPrice(originalPrice);
+                model.setStartTimeDate(startTimeDate);
+                model.setEndTimeDate(endTimeDate);
+                model.setDescription(description);
+                model.setFeatured(featured);
+                model.setTimeDateStamp(timeDateStamp);
+                model.setMerchantID(merchantID);
+                model.setStoreName(storeName);
+
+                addList.add(model);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void discountApiJson(String response, boolean status) {
+        if(status) {
+            discountList.clear();
+            adapter = new HomeAdapter(discountList, getActivity());
+            manager = new LinearLayoutManager(getActivity());
+            manager = AppMethods.getLinearLayoutWithOutScroll(getActivity());
+            home_rv.setAdapter(adapter);
+            home_rv.setLayoutManager(manager);
+        }
+        try {
+            JSONObject jo = new JSONObject(response);
+            String message = jo.optString(AppStrings.Responsedata.message);
+            if (jo.getInt(AppStrings.Responsedata.status) == Appintegers.statuscode.success) {
+                String imageBaseURL = jo.optString(AppStrings.Responsedata.imageBaseURL);
+                String discounts = jo.optString(AppStrings.Responsedata.discounts);
+                totalCount       =jo.getInt(AppStrings.Responsedata.totalCount);
+
+                apidiscountJsonData(imageBaseURL, discounts);
+//                home_srl.setRefreshing(false);
+                adapter.notifyDataSetChanged();
+            } else {
+//                home_srl.setRefreshing(false);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void adverstismentApiJson(String response) {
+        addList.clear();
+        try {
+            JSONObject jo = new JSONObject(response);
+            String message = jo.optString(AppStrings.Responsedata.message);
+            if (jo.getInt(AppStrings.Responsedata.status) == Appintegers.statuscode.success) {
+                String imageBaseURL = jo.optString(AppStrings.Responsedata.imageBaseURL);
+                String Advertisements = jo.optString(AppStrings.Responsedata.Advertisements);
+
+                apiaddJsonData(imageBaseURL, Advertisements);
+
+               /* homeViewpagerAdapter = new HomeViewpagerAdapter(addList ,getActivity());
+                home_vpager.setOffscreenPageLimit(homeViewpagerAdapter.getCount());
+                home_vpager.setAdapter(homeViewpagerAdapter);
+*/
+                homeViewpagerAdapter.notifyDataSetChanged();
+
+                home_vpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+                    }
+
+                    @Override
+                    public void onPageSelected(int position) {
+                        page = position;
+                    }
+
+                    @Override
+                    public void onPageScrollStateChanged(int state) {
+
+                    }
+                });
+
+                if(addList.isEmpty()){
+
+                    home_vpager.setVisibility(View.GONE);
+                }else{
+                    home_vpager.setVisibility(View.VISIBLE);
+                }
+
+            } else {
+
+                if(addList.isEmpty()){
+
+                    home_vpager.setVisibility(View.GONE);
+                }else{
+                    home_vpager.setVisibility(View.VISIBLE);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        handler.postDelayed(runnable, Appintegers.Delay);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        handler.removeCallbacks(runnable);
+    }
+
+
+//    @Override
+//    public void onRefresh() {
+//        discountApi();
+//    }
+
+
+
+}

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.leona.registration.Signup"
+    android:background="@color/bg_clor"
+    tools:showIn="@layout/activity_signup">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/size_15dp"
+        >
+
+
+        <android.support.design.widget.TextInputLayout style="@style/textinputlayouttheme">
+
+            <EditText
+                android:id="@+id/activity_signup_email_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                android:inputType="textNoSuggestions"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:drawableLeft="@mipmap/email"
+                android:textColorHint="@color/white"
+                android:drawablePadding="@dimen/size_10dp"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:orientation="horizontal">
+
+
+            <include layout="@layout/autopic_account"/>
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+        <android.support.design.widget.TextInputLayout style="@style/textinputlayouttheme">
+
+            <EditText
+                android:id="@+id/activity_signup_fname_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/fname"
+                android:inputType="textPersonName"
+                android:maxLength="@integer/char_length"
+                android:maxLines="1"
+
+
+                android:singleLine="true"
+                android:drawablePadding="@dimen/size_10dp"
+                android:drawableLeft="@mipmap/user"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout style="@style/textinputlayouttheme">
+
+            <EditText
+                android:id="@+id/activity_signup_lname_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/lname"
+                android:maxLength="@integer/char_length"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:drawableLeft="@mipmap/user"
+                android:drawablePadding="@dimen/size_10dp"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout style="@style/textinputlayouttheme">
+
+            <EditText
+                android:id="@+id/activity_signup_pwd_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/pwd"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:drawableLeft="@mipmap/key_small"
+                android:drawablePadding="@dimen/size_10dp"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <Button
+            android:id="@+id/activity_signup_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/size_20dp"
+            android:background="@mipmap/btn_signup"
+
+            style="@style/textviewStyle"
+
+            android:textColor="@color/gray"
+             />
+
+        <Button
+            android:id="@+id/activity_fb_btn"
+            style="@style/textviewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/size_20dp"
+
+
+            android:background="@mipmap/btn_facebook"
+
+
+
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_22dp" />
+
+
+        <TextView
+            android:id="@+id/activity_signup_alreadyac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/size_10dp"
+            android:layout_marginBottom="@dimen/size_24dp"
+            android:text="@string/alreadyhaveac"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_18dp"
+             />
+
+    </LinearLayout>
+
+
+</ScrollView>
+
+
+
+
+
+</RelativeLayout>

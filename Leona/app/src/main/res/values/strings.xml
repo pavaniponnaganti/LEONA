@@ -1,0 +1,202 @@
+<resources>
+    <string name="app_name">Leona</string>
+    <string name="fb_id">1881321695460454</string>
+
+
+    <string name="ok">Ok</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="no_internet_connection">Please check your internet connection</string>
+    <string name="alert_no_gps"> Please turn on your device GPS</string>
+
+    //Permission Alerts
+
+
+    <string name="no.storage.permission">Storage permission allows us to access storage to save
+
+images and to upload profile pictures. Please allow in App Settings for additional functionality.
+
+</string>
+
+    <string name="no_callphone">Call Phone permission allows us to call. Please allow in App
+
+Settings for additional functionality.</string>
+
+    <string name="error">Error</string>
+    <string name="title_activity_language_screen">LanguageScreen</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_home">Home</string>
+    <string name="title_prefe">Preferences</string>
+    <string name="title_nearby">Near By</string>
+    <string name="title_resturent">Restaurants</string>
+    <string name="title_settings">Settings</string>
+    <!--<string name="title_settings">Logout</string>-->
+    <string name="spanish">Spanish</string>
+    <string name="english">English</string>
+    <string name="title_activity_welcome_screen">WelcomeScreen</string>
+    <string name="title_activity_signup">Signup</string>
+    <string name="title_activity_login">Login</string>
+
+
+    // Forgot password
+
+    <string name="fpwd_msg">Enter your email below to receive your </string>
+    <string name="fpwd_msg1">Password Reset Instructions</string>
+    <string name="send_instruc"> Send Instructions </string>
+
+
+    // Login
+
+    <string name="fblogin">Login with facebook</string>
+    <string name="fpwd">Forgot password!</string>
+
+
+    // singup
+
+    <string name="email">Email Address</string>
+    <string name="fname">Firstname</string>
+    <string name="lname">Lastname</string>
+    <string name="pwd">Password</string>
+    <string name="signup">Signup</string>
+    <string name="alreadyhaveac">Already have an account ? <u>LOGIN </u></string>
+    <string name="title_activity_forgot_password">Forgot Password</string>
+
+
+    //tutorilas
+
+
+    <string name="home_tuto_des">In Home screen you can see all the discounts available in Leona. You can share the discounts, Search the discounts available. You can also notified with new discounts posted.
+</string>
+
+
+    <string name="nearby_tuto_des">In this screen you can see all the nearby restaurants based on the preferences and distance set.You can also share the restaurant and view the offers available for a particular restaurant.</string>
+    <string name="discount_tuto_des">Here you can see the detailed view of discounts. You can favorite and share the discount from this screen. Map is available which redirects to Google map to view the location of the discount.</string>
+    <string name="restaurant_tuto_des">In this screen you can see restaurant details, Address of the restaurant, timings of the restaurant and map to locate the restaurant. Here you can also view the discounts offered by this restaurant.</string>
+    <!-- <string name="footer_tuto_des">Home - Here you can see the all the available discounts .
+    Preferences - On Preferences screen you can view all the discounts based on the preferences and distance set .
+    Nearby - In this screen you can see all the nearby restaurants based on the preferences and distance set .
+    Restaurants - View all the restaurants available in Leona App .
+    Settings - Change the user profile, preferences set, and distance set . </string>
+-->
+    <string name="footer_tuto_des">Home - See all the available discounts .
+Preferences - View all the discounts based on the preferences and distance set .
+Nearby - See all the nearby restaurants based on the preferences and distance set .
+Restaurants - View all the restaurants available.
+Settings - User can update details. </string>
+
+    <string name="home_tuto_title">Home</string>
+
+
+    <string name="nearby_tuto_title">Nearby</string>
+    <string name="discount_tuto_title">Discount Details</string>
+    <string name="restaurant_tuto_title">Restaurant Details</string>
+    <string name="footer_tuto_title">Footer</string>
+
+    <string name="title_activity_preferences">Preferences</string>
+    <string name="preferences_msg">Enter your preferences Maximum of 10</string>
+    <string name="next">Next</string>
+    <string name="title_activity_radius">Radius</string>
+    <string name="select_distance">Select Distance</string>
+    <string name="save">Save</string>
+
+
+    //Validations
+
+    <string name="validate_email">Please enter your Email address </string>
+
+    <string name="validate_valid_email">Please enter a valid Email address</string>
+
+    <string name="validate_password">Please enter Password</string>
+    <string name="validate_location">Please enter Location</string>
+    <string name="validate_password_spaces">Password do not accept spaces</string>
+
+    <string name="validate_pwd_6"> Please enter a password with at least 6 characters</string>
+    <string name="validate_fname">Please enter Firstname</string>
+    <string name="validate_lname">Please enter Lastname</string>
+    <string name="validate_pref_no">Please choose the preferences</string>
+    <string name="validate_pref_min">Please choose atleast 2 preferences</string>
+    <string name="validate_pref_Max"> Maximum 10 preferences Only</string>
+    <string name="validate_radius_min">Please select the distance range</string>
+    <string name="radius_min">0m</string>
+    <string name="radius_max">2Km</string>
+
+
+    <string name="logout_msg">Do you want to Logout?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="search">search</string>
+    <string name="sort">Sort</string>
+    <string name="favourite">favourite</string>
+    <string name="offers">offers</string>
+    <string name="title_activity_discount_details">DiscountDetails</string>
+    <string name="update">Update</string>
+    <string name="applink"><b>Check out the amazing discount App \'Leona\' </b><u> https://play.google.com/store/apps/details?id=com.leona</u></string>
+    <string name="link_app"><u> https://play.google.com/store/apps/details?id=com.leona &amp; Install Leona app to get more updates</u></string>
+    <string name="preferences">Preferences</string>
+    <string name="radius">Radius</string>
+    <string name="terms_amp_condtions"><![CDATA[Terms & Condtions]]></string>
+    <string name="help">Help</string>
+    <string name="title_activity_profile_update">Profile Update</string>
+    <string name="title_activity_restarunt_details">RestaruntDetails</string>
+    <string name="location">Location</string>
+    <string name="title_activity_notifications">Notifications</string>
+    <string name="title_activity_terms_conditions">Terms&amp;Conditions</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_help">Help</string>
+    <string name="title_activity_my_favourites">Favourites</string>
+
+
+    <string-array name="info_ques_array">
+        <item>dummy</item>
+        <item>Where is my order?</item>
+        <item>Are there any discounts available at FoodinBag.in right now?</item>
+        <item>dummy</item>
+        <item>How to order online at FoodinBag?</item>
+        <item>How long does it take for my order to get delivered?</item>
+        <item>What are the delivery costs?</item>
+        <item>How can I pay for my order?</item>
+        <item>Cash on Delivery</item>
+        <item>Credit Card</item>
+        <item>Online Banking</item>
+        <item>Why is ordering online better than ordering by phone?</item>
+        <item>dummy</item>
+        <item>What is FoodinBag?</item>
+        <item>How can I see all restaurants?</item>
+        <item>dummy</item>
+        <item>I don’t remember my password</item>
+        <item>What are the advantages of an account at FoodinBag.in?</item>
+        <item>Do you want yourself listed on foodinBag?</item>
+    </string-array>
+
+    <string-array name="info_answer_array">
+        <item>dummy</item>
+        <item>After you place your order, we send it directly to the restaurant, which starts preparing it immediately. Our restaurants do everything they can to get your food delivered as quickly as possible. However, sometimes restaurants receive very large amount of orders, or drivers get stuck in heavy traffic - this unfortunately might cause delays. If the amount of time you’ve waited has exceeded the estimated delivery time, you can contact us and we’ll look into what’s going on.</item>
+        <item>We offers many different discounts at restaurants. If you want to view them all, have a look at: Restaurants with Discounts</item>
+        <item>dummy</item>
+        <item>Choose what you would like: Pick a restaurant and select items you’d like to order. You can search by restaurant name or by food item.Checkout: Enter your exact delivery address, payment method and your phone number. Always make sure that you enter the correct phone number to help us contact you regarding your order, if needed. Now sit back, relax, and we’ll get your food delivered to your doorstep.</item>
+        <item>Delivery time varies from restaurant to restaurant. It also depends on the number of orders that the restaurant has to prepare and on the distance between the restaurant and your delivery address.</item>
+        <item>Delivery costs, will be determined by the distance between the restaurant you have ordered from and the delivery destination.</item>
+        <item>All our restaurants accept cash on delivery. In addition, there are various online payment methods available. </item>
+        <item>Select ‘Cash on Delivery’ on the checkout page and pay the driver at your doorstep when you receive your order.</item>
+        <item>Select ‘Credit Card’ on the checkout page. After placing your order you will be redirected to the secure payment page of our payment partner, where you can follow the instructions. Once the payment is confirmed, the order will be transmitted to the restaurant.</item>
+        <item>Select ‘Online Banking’ and your bank on the checkout page. After placing your order you will be redirected to the secure payment page of our payment partner, where you can follow the instructions. Once the payment is confirmed, the order will be transmitted to the restaurant.</item>
+        <item>Online ordering at foodinbag provides several advantages over telephone ordering.Discover: We offer a huge choice of restaurants, and we have their menus online so you don’t have to collect menus for individual restaurants or stick to just one of them. \n Every day you can discover new restaurants and new tastes.\n Take your time: You have as much time as you need to decide what to eat today, instead of listening to someone read out the entire menu to you and making a decision on the spot.\n Know what you’re getting: We help you make the right choice by providing customer reviews and ratings.Convenient payment: If you order at foodinbag, you’re not limited to paying by cash on delivery. You can easily and safely pay online using online banking or your credit card.\n You can view details of all your past orders and easily re-order.</item>
+        <item>dummy</item>
+        <item>Food in Bag is a convenient online food ordering website that connects users with various local restaurants. Customers can browse through numerous menus and place orders for delivery at the best price.\n At foodinbag we believe ordering food online should be fuss-free, fast and definitely fun. With just a few clicks you can order from a wide variety of delicious cuisines online.</item>
+        <item>If you want to view all restaurants, just go to Restaurant List. Then enter your location to check which restaurants can deliver to you.</item>
+        <item>dummy</item>
+        <item>You have already created an account but you can\'t remember your password? Click on \'Login \/ Register\' at the top of the page. Then click on Forgot Password? Fill out your email address and a password recovery link will be sent to you by email.</item>
+        <item>You are not obliged to create an account, but it is very handy.<b>There are definitely a few advantages of signing up:</b>\n 1. Your previous delivery addresses will be saved so that you don\'t have to enter them all over again on your next order. \n 2. You can track previous orders.\n 3. You can quickly make re-orders.\n There are many more advantages... register with us and discover them!/nClick on \'Login \/ Register\' at the top of the page. Then fill out your information in the ‘Create an account’ section and click the ‘Register’ button. You can also create an account directly after placing an order. Your delivery address and the order details will then be saved in your account.</item>
+        <item>If you are a restaurant you can register yourself for listing by going to partner with us page. We will contact you.</item>
+
+    </string-array>
+    <string name="title_activity_search">Search</string>
+    <string name="hint_search">search</string>
+    <string name="title_activity_restaurent_search">RestaurentSearch</string>
+    <string name="get_directions">Get Directions</string>
+    <string name="status_msg">Nothing To Display</string>
+
+
+</resources>

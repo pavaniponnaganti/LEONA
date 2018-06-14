@@ -1,0 +1,143 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+
+
+    </style>
+  <style name="AppTheme.NoActionBar1">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+      <item name="colorPrimary">@color/colorPrimary</item>
+      <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+      <item name="colorAccent">@color/bg_clor</item>
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="textviewStyle" parent="@style/AppTheme">
+
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:gravity">center</item>
+
+
+        <item name="android:textSize">22dp</item>
+
+
+    </style>
+
+    <style name="toggletextStyle" parent="@style/AppTheme">
+
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:drawablePadding">7dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">6dp</item>
+
+
+    </style>
+
+
+    <style name="textinputlayouttheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/size_10dp</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">@dimen/size_10dp</item>
+
+
+    </style>
+
+    <style name="textinputlayouttheme1" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/size_10dp</item>
+        <item name="android:textColorHint">@color/bg_clor</item>
+        <item name="android:textColor">@color/bg_clor</item>
+        <item name="colorAccent">@color/bg_clor</item>
+        <item name="colorControlNormal">@color/bg_clor</item>
+        <item name="colorControlActivated">@color/bg_clor</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">@dimen/size_10dp</item>
+
+
+    </style>
+<style name="edittextayouttheme1">
+          <item name="android:textColorHint">@color/bg_clor</item>
+          <item name="android:textColor">@color/bg_clor</item>
+          <item name="colorAccent">@color/bg_clor</item>
+    <item name="colorControlNormal">@color/bg_clor</item>
+    <item name="colorControlActivated">@color/bg_clor</item>
+
+
+</style>
+
+    <style name="textStylelarge" parent="android:TextAppearance.Large">
+
+        <item name="android:textColor">@color/item_des</item>
+    </style>
+
+
+    <!-- ToolBar -->
+    <style name="ToolBarStyle" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/gray</item>
+        <item name="android:gravity">center_horizontal</item>
+
+
+    </style>
+
+
+    <style name="trans_act" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/bg_transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+
+
+    </style>
+
+
+    <color name="dsb_progress_color">#ff009688</color>
+    <color name="dsb_track_color">#ff939393</color>
+    <color name="dsb_disabled_color">#66939393</color>
+    <color name="dsb_ripple_color_pressed">#77939393</color>
+    <color name="dsb_ripple_color_focused">#99999999</color>
+
+    <style name="Widget.DiscreteSeekBar" parent="android:Widget">
+        <item name="dsb_indicatorTextAppearance">@style/Widget.DiscreteIndicatorTextAppearance
+        </item>
+        <item name="dsb_progressColor">@color/dsb_progress_color_list</item>
+        <item name="dsb_trackColor">@color/dsb_track_color_list</item>
+        <item name="dsb_rippleColor">@color/dsb_ripple_color_list</item>
+        <item name="dsb_indicatorColor">@color/dsb_progress_color</item>
+        <item name="dsb_indicatorElevation">4dp</item>
+        <item name="dsb_mirrorForRtl">true</item>
+    </style>
+
+    <style name="Widget.DiscreteIndicatorTextAppearance" parent="android:TextAppearance.Small">
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+        <item name="android:padding">6dp</item>
+    </style>
+
+
+</resources>

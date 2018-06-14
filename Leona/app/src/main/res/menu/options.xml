@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/search"
+
+        android:icon="@mipmap/search"
+
+        app:showAsAction="always"
+        android:title="@string/search">
+    </item>
+
+    <item
+        android:id="@+id/notify"
+        android:title="Notification"
+        android:icon="@mipmap/notif"
+        app:showAsAction="always">
+    </item>
+
+    <item
+        android:id="@+id/sort"
+        android:title="@string/sort"
+
+        app:showAsAction="never">
+
+
+        <menu>
+
+
+            <group android:id="@+id/group2"   android:checkableBehavior="single" >
+                <item android:id="@+id/low2high" android:title="Low price to high price " />
+                <item android:id="@+id/high2low" android:title="High price to low price " />
+                <item android:id="@+id/fdis" android:title="Featured discount " />
+                <item android:id="@+id/experied" android:title="Experied" />
+                <item android:id="@+id/all" android:title="All" android:checked="true" />
+            </group>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/fav"
+        android:title="@string/favourite"
+
+        app:showAsAction="never">
+    </item>
+
+
+
+
+</menu>

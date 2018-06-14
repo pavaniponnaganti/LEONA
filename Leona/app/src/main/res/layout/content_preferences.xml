@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.leona.registration.Preferences"
+    android:background="@color/bg_clor"
+    tools:showIn="@layout/activity_preferences">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_24dp"
+        android:paddingBottom="@dimen/size_15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="@dimen/size_10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_15dp"
+            android:text="@string/preferences_msg"/>
+
+        <com.leona.widget.CollectionPicker
+            android:id="@+id/collection_item_picker"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/size_15dp"
+            android:layout_weight="1"
+            android:padding="@dimen/size_2dp"
+            app:cp_addIcon="@android:color/transparent"
+            app:cp_cancelIcon="@mipmap/tick"
+            app:cp_itemBackgroundNormal="@color/pref_bg"
+            app:cp_itemBackgroundPressed="@color/pref_bg"
+            app:cp_itemMargin="8dp"
+            app:cp_textPaddingBottom="5dp"
+            app:cp_textPaddingLeft="10dp"
+            app:cp_textPaddingRight="10dp"
+            app:cp_textPaddingTop="5dp"
+            app:cp_itemRadius="@dimen/size_15dp"
+            app:cp_simplified="false"
+            />
+
+
+
+
+
+        <Button
+
+            android:id="@+id/content_pref_next_btn"
+            android:layout_margin="@dimen/margin_24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedcorners"
+            android:text="@string/next"
+            android:textSize="@dimen/size_22dp"
+
+            />
+
+
+
+    </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+</RelativeLayout>

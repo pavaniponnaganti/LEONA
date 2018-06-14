@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_drawa"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_pref"
+        android:icon="@drawable/ic_pref_drawa"
+        android:title="@string/title_prefe" />
+
+    <item
+        android:id="@+id/navigation_nearby"
+        android:icon="@drawable/ic_near_drawa"
+        android:title="@string/title_nearby" />
+ <item
+        android:id="@+id/navigation_restaurant"
+        android:icon="@drawable/ic_resturents_drawa"
+        android:title="@string/title_resturent" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_setting_drawa"
+        android:title="@string/title_settings" />
+
+</menu>

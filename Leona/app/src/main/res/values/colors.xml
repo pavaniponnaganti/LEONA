@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f28d1b</color>
+    <color name="colorPrimaryDark">#db790c</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#726c6c</color>
+    <color name="bg_clor">#db790c</color>
+
+
+    <color name="pref_bg">#f5a448</color>
+    <color name="bg_transparent">#00fffffd</color>
+    <color name="red">#ce0000</color>
+    <color name="op_color">#a96d15</color>
+    <color name="item_des">#505050</color>
+    <color name="item_des1">#545253</color>
+    <color name="item_help_color">#f4f4f4</color>
+    <color name="rest_des_color">#585858</color>
+
+    <color name="profile_btn_gb">#f28d1b</color>
+
+
+</resources>

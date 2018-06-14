@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="3dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size_10dp"
+        app:cardBackgroundColor="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_10dp"
+            android:orientation="vertical">
+
+
+
+
+                <RelativeLayout
+                    android:id="@+id/info_help_question_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/list_notify_message_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:textSize="@dimen/size_22dp"
+
+                        android:textColor="@color/gray"
+
+
+                        />
+
+                    <ImageView
+                        android:id="@+id/list_notify_bell_iv"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/nofi"
+                        />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/list_notify_time_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/margin_14dp"
+
+                    />
+            </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

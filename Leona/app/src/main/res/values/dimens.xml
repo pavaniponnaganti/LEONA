@@ -1,0 +1,34 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="margin_24dp">24dp</dimen>
+    <dimen name="margin_14dp">14dp</dimen>
+    <dimen name="size_15dp">15dp</dimen>
+    <dimen name="size_18dp">18dp</dimen>
+    <dimen name="size_8dp">8dp</dimen>
+    <dimen name="size_5dp">5dp</dimen>
+    <dimen name="size_1dp">1dp</dimen>
+    <dimen name="size_10dp">10dp</dimen>
+
+    <dimen name="size_22dp">22dp</dimen>
+    <dimen name="size_24dp">24dp</dimen>
+    <dimen name="size_2dp">2dp</dimen>
+    <dimen name="size_20dp">20dp</dimen>
+    <dimen name="size_40dp">40dp</dimen>
+    <integer name="char_length">16</integer>
+
+    <!-- cardview Dimentions-->
+
+    <dimen name="card_hight">80dp</dimen>
+    <dimen name="card_padding">3dp</dimen>
+    <dimen name="card_text_margin">10dp</dimen>
+    <dimen name="card_elv">2dp</dimen>
+    <dimen name="card_margin">1dp</dimen>
+    <dimen name="card_margin_com">2dp</dimen>
+    <dimen name="card_lay_margin_com">1dp</dimen>
+    <dimen name="min_hight">3dp</dimen>
+
+
+</resources>

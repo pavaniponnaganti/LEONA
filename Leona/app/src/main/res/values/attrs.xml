@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <attr name="direction">
+        <enum name="rightToLeft" value="0" />
+        <enum name="bottomToTop" value="1" />
+        <enum name="leftToRight" value="2" />
+        <enum name="topToBottom" value="3" />
+    </attr>
+    
+    <declare-styleable name="SlidingDrawer">
+        <attr name="handle" format="reference" />
+        <attr name="content" format="reference" />
+        <attr name="direction" />
+    </declare-styleable>
+
+    <attr name="textFieldStyle" format="reference"/>
+
+
+    <declare-styleable name="CollectionPicker">
+        <attr name="cp_itemRadius" format="dimension" />
+        <attr name="cp_itemBackgroundNormal" format="color" />
+        <attr name="cp_itemBackgroundPressed" format="color" />
+        <attr name="cp_addIcon" format="reference" />
+        <attr name="cp_cancelIcon" format="reference" />
+        <attr name="cp_itemMargin" format="dimension" />
+        <attr name="cp_itemTextColor" format="color"/>
+        <attr name="cp_textPaddingLeft" format="dimension" />
+        <attr name="cp_textPaddingRight" format="dimension" />
+        <attr name="cp_textPaddingTop" format="dimension" />
+        <attr name="cp_textPaddingBottom" format="dimension" />
+        <attr name="cp_simplified" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="Theme">
+        <attr name="discreteSeekBarStyle" format="reference"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="DiscreteSeekBar">
+        <attr name="dsb_min" format="integer|dimension"/>
+        <attr name="dsb_max1" format="integer|dimension"/>
+        <attr name="dsb_value" format="integer|dimension"/>
+        <attr name="dsb_mirrorForRtl" format="boolean"/>
+        <attr name="dsb_allowTrackClickToDrag" format="boolean"/>
+        <attr name="dsb_progressColor" format="color|reference"/>
+        <attr name="dsb_trackColor" format="color|reference"/>
+        <attr name="dsb_indicatorTextAppearance" format="reference"/>
+        <attr name="dsb_indicatorColor" format="color|reference"/>
+        <attr name="dsb_indicatorElevation" format="dimension"/>
+        <attr name="dsb_indicatorFormatter" format="string|reference"/>
+        <attr name="dsb_rippleColor" format="color|reference"/>
+        <attr name="dsb_indicatorPopupEnabled" format="boolean"/>
+        <attr name="dsb_trackHeight" format="integer|dimension"/>
+        <attr name="dsb_scrubberHeight" format="integer|dimension"/>
+        <attr name="dsb_thumbSize" format="integer|dimension"/>
+        <attr name="dsb_indicatorSeparation" format="integer|dimension"/>
+    </declare-styleable>
+
+</resources>
